@@ -1,0 +1,67 @@
+.motivation {
+  width: 100%;
+ 
+  &__golden__line {
+    display: inline-block;
+    height:3px;
+    width: 100%;
+    background: var(--text-gradient);
+    border-radius: 100%;
+    opacity: 1;
+  }
+  &__text__wrapper {
+    display: block;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  &__text__wrapper > p {
+    font-size: 21px;
+    text-align: center;
+  }
+  &__text__emph{
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  &__text__header {
+    text-align: center;
+    animation: textShine 3s ease-in-out infinite alternate;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: var(--text-gradient);
+    background-size: 300% auto;
+    font-family: 'Cuprum', sans-serif;
+    font-size: 28px;
+    @keyframes textShine {
+      0% {
+          background-position: 0% 50%;
+      }
+      100% {
+          background-position: 100% 50%;
+      }
+    } 
+  }
+}
+
+@media(max-width: 480px) {
+  .motivation {
+  
+    &__text__wrapper > p {
+      font-size: 17px;
+      text-align: center;
+      
+      
+    }
+    &__text__emph{
+      font-size: 19px;
+      text-align: center;
+    }
+    
+    &__text__header {
+      font-size: 19px;
+      margin: 0;
+    }  
+  } 
+}

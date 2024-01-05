@@ -1,0 +1,382 @@
+.sectionForm {
+  &__container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+    height: 30rem;
+  }
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1rem;
+    
+    
+  }
+  &__left__text {
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+    
+  }
+  &__left__logo{
+    text-align: right;
+    width: 100%;
+  }
+  &__left__header{
+    text-align: center;
+    animation: textShine 3s ease-in-out infinite alternate;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: var(--text-gradient);
+    background-size: 300% auto;
+    font-family: 'Cuprum', sans-serif;
+    font-size: 42px;
+    // margin-bottom: 2rem;
+    @keyframes textShine {
+      0% {
+          background-position: 0% 50%;
+      }
+      100% {
+          background-position: 100% 50%;
+      }
+    }  
+  }
+  &__left__par__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+
+  }
+  &__left__par{
+    font-size: 24px;
+    text-align: center; 
+  }
+  &__form__wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+ 
+      
+      &_GLOW {
+        box-shadow: 0 2px 4px 4px var(--main-text-color);
+        border-radius: 5px;
+        animation: glow 2s ease-in-out;
+        @keyframes glow {
+          0% {
+            box-shadow: 0% 50%;
+          }
+          100% {
+            box-shadow: none;
+          }
+        }  
+      }
+  }
+}
+
+.sectionForm__form{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  &__text__wrapper{
+    display: flex;
+    flex-direction: column;
+  gap: 1rem;
+  }
+  
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+
+  }
+
+  &__label {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: center;
+    font-size: 22px;
+  }
+  &__input {
+    width: 95%;
+    height: 42px;
+    border-radius: 10px;
+    font-size: 17px;
+    border: var(--main-text-color) 1px solid;
+    background-color: transparent;
+    position: relative;
+    z-index:10;
+    color:white;
+    padding-left: 1rem;
+  }
+
+  ::placeholder {
+    color: white; 
+  }
+  &__btn__wrpapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap:1rem;
+    align-items: center;
+    & span {
+      font-size: 18px;
+      height: 13px;
+    }
+  }
+  &__btn {
+    background-image: var(--text-gradient);
+    width: 100%;
+    color: black;
+    font-size: 20px;
+    padding: 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s ease-in;
+    background-size: 300% auto;
+    animation: btnShine 3s ease-in-out infinite alternate;
+    position: relative;
+    z-index:10;
+    @keyframes btnShine {
+      0% {
+          background-position: 0% 50%;
+      }
+      100% {
+          background-position: 100% 50%;
+      }
+    }  
+      &:hover{
+      box-shadow:  2px 2px 3px 2px rgb(91, 61, 0);
+      color: white;
+    }
+
+  }
+  &__btn_Disabled {
+    background-color: gray;
+    background-image: none;
+    color: white;
+    &:hover{
+      box-shadow: none;
+    }
+  }
+  small {
+    font-size: 16px;
+    color: rgb(215, 115, 115);
+  }
+}
+
+@media(max-width: 480px) and (min-width: 280px) {
+  .sectionForm {
+    &__container {
+    flex-direction: column;
+    align-items: center;
+    }
+    &__left{
+      width: 100%;
+      align-items: center;
+      gap:10px
+
+    }
+    &__left__logo{
+      text-align: right;
+      width: 100%;
+    }
+    &__left__header{
+      font-size: 32px;
+      margin-bottom: 1rem;
+    }
+    &__left__par{
+      font-size: 18px;
+      text-align: center; 
+      line-height: 20px;
+    }
+  }
+  .sectionForm__form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &__form__wrapper{
+      padding: 0;
+    }
+
+    &__text__wrapper{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    &__label {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+    }
+
+    &__input {
+      width: 100%;
+      height: 37px;
+      font-size: 16px;
+    }
+
+    &__btn__wrpapper{
+      text-align: center;
+      & span {
+        font-size: 12px;
+      }
+    }
+    &__btn {
+    font-size: 18px;
+    }
+  }
+}
+@media(max-width: 480px) {
+  .sectionForm {
+    &__container {
+    flex-direction: column;
+    height: 60rem;
+    margin-top: 1rem;
+    width: 100%;
+    
+    }
+    &__left{
+      width: 90%;
+
+    }
+    &__left__logo{
+      text-align: right;
+      width: 100%;
+    }
+    &__left__header{
+      font-size: 30px;
+      margin-bottom: 1rem;
+    }
+    &__left__par{
+      font-size: 23px;
+      text-align: center; 
+      line-height: 28px;
+    }
+  }
+  .sectionForm__form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+
+    &__form__wrapper{
+      padding: 0;
+    }
+
+    &__text__wrapper{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    &__label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 16px;
+    }
+
+    &__input {
+      width: 93%;
+      height: 37px;
+      font-size: 14px;
+    }
+
+    ::placeholder {
+      font-size: 13px; 
+    }
+
+    &__btn__wrpapper{
+      text-align: center;
+    }
+    &__btn {
+    font-size: 18px;
+    }
+  }  
+}
+
+@media(max-width: 926px) and (min-width: 450px) {
+  .sectionForm {
+    &__container {
+    flex-direction: column;
+    align-items: center;
+    height: 40rem;
+    }
+    &__left{
+      width: 100%;
+      align-items: center;
+      gap:10px
+
+    }
+    &__left__logo{
+      text-align: right;
+      width: 100%;
+    }
+    &__left__header{
+      font-size: 32px;
+      margin-bottom: 1rem;
+    }
+    &__left__par{
+      font-size: 18px;
+      text-align: center; 
+      line-height: 20px;
+    }
+  }
+  .sectionForm__form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &__text__wrapper{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    &__label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+    }
+
+    &__input {
+      width: 95%;
+      height: 37px;
+      font-size: 16px;
+    }
+
+    ::placeholder {
+      font-size: 13px; 
+    }
+
+    &__btn__wrpapper{
+      text-align: center;
+    }
+    &__btn {
+    font-size: 18px;
+    }
+  }  
+
+}
+

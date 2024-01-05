@@ -1,0 +1,151 @@
+.sectionPics__main__container{
+  display: flex;
+  flex-direction: column;
+  gap:1rem
+}
+
+.sectionPics{
+  display: flex;
+  width: 100%;
+
+  &__wrapper{
+    padding: 1rem;
+    height: 15%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__text__container {
+    display: flex;
+    flex-direction: column;
+    height:fit-content;
+    padding: 1rem;
+  }
+  &__text_header {
+
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    animation: textShine 3s ease-in-out infinite alternate;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: var(--text-gradient);
+    background-size: 300% auto;
+    
+    font-size: 32px;
+    @keyframes textShine {
+      0% {
+          background-position: 0% 50%;
+      }
+      100% {
+          background-position: 100% 50%;
+      }
+    } 
+  }
+  &  p {
+    font-size: 24px;
+    text-align: center;
+    margin: 0;
+
+  }
+
+  &__img__wrapper {
+    display: flex;
+    justify-content: center;
+    width:50%;
+
+  }
+
+  &__img {
+    height: 100%;
+    width:100%
+  }
+}
+@media(max-width: 480px) {
+.sectionPics{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  
+  
+    &__wrapper{
+      
+      justify-content: center;
+      width: 95%;
+      padding: 0;
+      
+      
+    }
+    &__text__container {
+      display: flex;
+      flex-direction: column;
+      height: fit-content;
+      padding: 0;
+      align-items: center;
+    }
+    & p {
+      padding-top: 1rem;
+      font-size: 23px;
+      text-align: center;
+      width: 78%;
+    }
+    &__text_header {
+      font-size: 33px;
+      text-align: center;
+    }
+    &__img {
+      height: 10rem;
+          width: auto;
+        } 
+  }
+}
+
+@media(max-width: 1130px) and (min-width: 450px) {
+  .sectionPics{
+  display: grid;
+    grid-template-columns: repeat(2,1fr);
+  height: 100%;
+    padding:10px;
+  
+    &__wrapper{
+      width: 80%;
+      gap:1rem;
+      
+      width: 95%;
+      padding: 0;
+      margin-bottom: 2rem;
+      
+    }
+    &__text__container {
+      display: flex;
+      flex-direction: column;
+      height:65%;
+      padding: 0;
+      align-items: center;
+    }
+    & p {
+      
+      font-size: 20px;
+      text-align: center;
+      height: 100%;
+      width: 78%;
+    }
+    &__text_header {
+      font-size: 23px;
+      
+    
+      text-align: center;
+    }
+    &__img {
+      max-height: 150px;
+      min-height: 50px;
+      width: auto;
+        } 
+  }
+}

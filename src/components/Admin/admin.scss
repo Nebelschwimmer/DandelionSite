@@ -1,0 +1,168 @@
+.table__container {
+  margin-top: 10rem;
+  z-index: 5;
+  width: 100%;
+}
+
+table {
+  counter-reset: rowNumber;
+  border-collapse: collapse;
+  border: 1px solid rgb(62, 62, 62);
+  font-size: 18px;
+  word-break: break-all;
+  width: 100%;
+  background-color: rgb(34, 29, 29);
+ 
+}
+
+.search__input{
+  font-size: 20px;
+  padding: 10px;
+  width:30%;
+  border-radius: 10px;
+  background-color: transparent;
+  color: white;
+  ::placeholder {
+    color: white;
+    padding-left: 1rem;
+  }
+}
+
+.sort_users_container{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sort_users_wrapper{
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 20px;
+  align-items: center;
+  border: 1px dotted gray;
+  width: fit-content;
+  position: relative;
+  bottom: 3rem;
+}
+.sort_users_item{
+  cursor: pointer;
+  &:hover {
+    color: var(--main-text-color);
+  }
+}
+
+.countLines {
+  counter-reset: trCount; 
+  overflow: auto;         
+  white-space: nowrap;
+  text-align: center;
+}   
+
+.no_users {
+  font-size: 31px;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+ 
+}
+.countLines tr td:first-child:before {
+  position:relative;                
+  counter-increment: trCount;       
+  content:counter(trCount);
+}   
+
+caption {
+  font-size: 41px;
+  margin-bottom: 2rem;
+}
+th{
+  font-size: 26px;
+}
+
+.home_btn_wrapper{
+  width: 100%;
+  text-align: center;
+  z-index: 3;
+}
+.home_btn{
+  width: 20%;
+  height: 3rem;
+  font-size: 18px;
+  cursor: pointer;
+  background-color:rgb(62, 62, 62);
+  color: white;
+  pointer-events:all;
+  border-radius: 5px;
+  margin-top: 3rem;
+
+}
+
+
+
+
+.delete-icon {
+  width: 4%;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  &:hover {
+    opacity: 1;
+    color: var(--main-text-color)
+  }
+}
+
+
+@media(max-width: 480px) {
+  .table__container {
+    height: 100%;
+    margin: 0 auto;
+  }
+  caption {
+    font-size: 15px;
+  }
+  table {
+    font-size: 7px;
+    width: 100%;
+    height: 100%;
+  }
+  th{
+    font-size: 10px;;
+  }
+  .delete-icon {
+    height: 5px;
+    width: 5px;
+    font-size: 5px;
+  }
+  .countLines {
+    white-space:initial 
+  }
+
+  .sort_users_wrapper{
+    font-size: 10px;
+    bottom:0
+  }
+  .sort_users_container{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .search__input{
+    font-size: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: transparent;
+    color: white;
+    ::placeholder {
+      color: white;
+      padding-left: 1rem;
+    }
+  }
+  .home_btn{
+    font-size: 12px;
+  }
+
+}
