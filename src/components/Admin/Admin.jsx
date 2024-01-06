@@ -16,22 +16,24 @@ export const Admin = ({users, setUsers}) =>{
 
 const navigate = useNavigate()
 
-
 useEffect(()=>{
   showUsers().then((result)=>{
     setUsers(result);
   })
-},[setUsers])
+},[setUsers]
+)
 
 
 
 const deleteUserInfo = async (_id) => {
-  try { await deleteUser(_id);
+  try {
+      await deleteUser(_id);
       const newUsewsList = users.filter(f => f._id !== _id)
       setUsers(newUsewsList);
-      } 
-catch (err) { console.log(err)}
-
+  } 
+  catch (err) { 
+    console.log(err)
+  }
 }
 
 
@@ -116,11 +118,11 @@ useEffect(()=>{
           <>
             <tbody>
               <tr key={r._id}>
-                      <td></td>
-                      <td>{r.name}</td>
-                      <td>{r.phone}</td>
-                      <td style={{width: '30%'}}>{r.email}</td>
-                      <td> {new Date(r.createdAt).toLocaleString("ru", options)} </td>
+                <td></td>
+                <td>{r.name}</td>
+                <td>{r.phone}</td>
+                <td style={{width: '30%'}}>{r.email}</td>
+                <td> {new Date(r.createdAt).toLocaleString("ru", options)} </td>
               </tr>
             </tbody>
             </>)
@@ -164,7 +166,6 @@ useEffect(()=>{
                       <td style={{width: '30%'}}>{el.email}</td>
                       <td> {new Date(el.createdAt).toLocaleString("ru", options)} </td>
                       <td onClick={()=>{deleteUserInfo(el._id)}} title='Удалить запись' className='delete-icon'><DeleteIcon></DeleteIcon></td>
-
                   </tr>
                 );
               })}
@@ -176,9 +177,9 @@ useEffect(()=>{
       )
       
       :
+      
       (
       <div className='no_users'>
-        
         <span  style={{fontSize: '32px', color: "rgb(236, 194, 95)"}}>Нет данных пользователей</span>
       </div>
       )

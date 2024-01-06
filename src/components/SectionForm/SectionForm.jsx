@@ -22,7 +22,7 @@ const [progress, setProgress] = useState(false)
 const [dataSent, setDataSent] = useState(false)
 const [disableBtn, setDisableButton] = useState(false)
 const [seconds, setSeconds] = useState(10);
-const [ timer, setTimer ] = useState(false);
+const [timer, setTimer] = useState(false);
 
 const {register, handleSubmit, formState: { errors }} = useForm();
 
@@ -44,7 +44,7 @@ const phoneRegister = register("phone", {
     message:
     "Некорректный номер!",
     value: /^((8|\+374|\+994|\+995|\+375|\+7|\+380|\+38|\+996|\+998|\+993)[\- ]?)?\(?\d{3,5}\)?[\- ]?\d{1}[\- ]?\d{1}[\- ]?\d{1}[\- ]?\d{1}[\- ]?\d{1}(([\- ]?\d{1})?[\- ]?\d{1})?$/
-    // value: /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/
+    
   }
 });
 
@@ -104,11 +104,6 @@ useEffect(() => {
     setTimer(false);
   }
 }, [ seconds, timer ]);
-
-
-
-
-
 
 
   return(
@@ -173,8 +168,6 @@ useEffect(() => {
               <span >{dataSent && 'Спасибо, ваши данные получены'}</span>
               <span>{timer  && `Повторная отправка данных возможна через ${seconds} с`}</span>
             <button disabled={timer} className={cn("sectionForm__form__btn", { ["sectionForm__form__btn_Disabled"]: timer })}  type='submit'>{!timer ? "Отправить" : "Пожалуйста, подождите"}</button>
-
-
           </div>
             {progress && <LinearProgress color="inherit"/> }
           
