@@ -5,12 +5,12 @@ const onResponse = (res) => {
 };
 
 export const showUsers = () => {
-  return fetch('http://localhost:3050/users', {
+  return fetch('/users', {
   }).then((res) => onResponse(res));
 }
 
 export const addNewUSer = (body) => {
-  return fetch('http://localhost:3050/users', {
+  return fetch('/users/add', {
     headers: {
       "Content-Type": "application/json"
     },
@@ -21,7 +21,7 @@ export const addNewUSer = (body) => {
 }
 
 export const deleteUser = (_id) => {
-  return fetch('http://localhost:3050/users', {
+  return fetch('/users/delete', {
     headers: {
       "Content-Type": "application/json"
     },

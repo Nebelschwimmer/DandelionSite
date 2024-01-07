@@ -18,7 +18,7 @@ const navigate = useNavigate()
 
 useEffect(()=>{
   showUsers().then((result)=>{
-    setUsers(result.data);
+    setUsers(result);
   })
 },[setUsers]
 )
@@ -59,11 +59,11 @@ const options = {
 const setSortUsers = (sortWay) => {
   switch(sortWay) {
   case "Сначала новые":
-      const sortNew = users.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+      const sortNew = users.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
     setUsers([...sortNew]);
     break;
   case "Сначала стырые":
-    const sortOld = users.sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
+    const sortOld = users.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
     setUsers([...sortOld]);
       break;
       default:
@@ -122,7 +122,7 @@ useEffect(()=>{
                 <td>{r.name}</td>
                 <td>{r.phone}</td>
                 <td style={{width: '30%'}}>{r.email}</td>
-                <td> {new Date(r.created_at).toLocaleString("ru", options)} </td>
+                <td> {new Date(r.createdAt).toLocaleString("ru", options)} </td>
               </tr>
             </tbody>
             </>)
@@ -164,7 +164,7 @@ useEffect(()=>{
                       <td>{el.name}</td>
                       <td>{el.phone}</td>
                       <td style={{width: '30%'}}>{el.email}</td>
-                      <td> {new Date(el.created_at).toLocaleString("ru", options)} </td>
+                      <td> {new Date(el.createdAt).toLocaleString("ru", options)} </td>
                       <td onClick={()=>{deleteUserInfo(el._id)}} title='Удалить запись' className='delete-icon'><DeleteIcon></DeleteIcon></td>
                   </tr>
                 );
