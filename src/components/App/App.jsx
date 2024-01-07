@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './app.scss'
 import { Header } from '../Header/Header';
 import { SectionPics } from '../SectionPics/SectionPics';
@@ -19,6 +19,10 @@ const App = () => {
   const scrollRef = useRef(null)
   const [glow, setGlow] = useState(false)
   const [users, setUsers] = useState([])
+  // const [isLoading, setLoading] = useState(true);
+
+
+
 
 
   const particlesInit = useCallback(async (engine) => {
@@ -26,6 +30,27 @@ const App = () => {
   }, []);
 
   const navigate = useNavigate()
+
+  
+  // function someRequest() { //Simulates a request; makes a "promise" that'll run for 2.5 seconds
+  //   return new Promise(resolve => setTimeout(() => resolve(), 12500));
+  // } 
+  
+  // useEffect(() => {
+  //   someRequest().then(() => {
+  //     const loaderElement = document.querySelector(".loader-container");
+  //     if (loaderElement) {
+  //       loaderElement.remove();
+  //       setLoading(!isLoading);
+  //     }
+  //   });
+  // });
+
+  // if (isLoading) {
+  //   return null;
+  // }
+
+
 
   
   return (

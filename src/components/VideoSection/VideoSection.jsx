@@ -34,6 +34,7 @@ export const VideoSection = () => {
                   <span className='motivation__golden__line'></span>
                 
                   </div>
+                
                 }
                 {matches.large && 
                   <div className="section1__video__container">
