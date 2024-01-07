@@ -13,13 +13,14 @@ import { options } from "../../utils/utils.js"
 import { useRef} from 'react'
 import { Route, Routes, useNavigate } from "react-router-dom";
 import { Admin } from "../Admin/Admin.jsx";
-
+import CircularProgress from '@mui/material/CircularProgress';
+import Media from 'react-media';
 const App = () => {
 
   const scrollRef = useRef(null)
   const [glow, setGlow] = useState(false)
   const [users, setUsers] = useState([])
-  // const [isLoading, setLoading] = useState(true);
+
 
 
 
@@ -31,25 +32,13 @@ const App = () => {
 
   const navigate = useNavigate()
 
-  
-  // function someRequest() { //Simulates a request; makes a "promise" that'll run for 2.5 seconds
-  //   return new Promise(resolve => setTimeout(() => resolve(), 12500));
-  // } 
-  
-  // useEffect(() => {
-  //   someRequest().then(() => {
-  //     const loaderElement = document.querySelector(".loader-container");
-  //     if (loaderElement) {
-  //       loaderElement.remove();
-  //       setLoading(!isLoading);
-  //     }
-  //   });
-  // });
-
-  // if (isLoading) {
-  //   return null;
-  // }
-
+  const [loading, setLoading] = useState(true)
+  useEffect(() => {
+      setTimeout(() => setLoading(false), 3000)
+  }, [])
+  if (loading) {
+      return <div className="wait"><CircularProgress color="inherit" /></div>
+  }
 
 
   
@@ -92,7 +81,41 @@ const App = () => {
         
         </Routes>
         </main>
-      <Particles  options={options} init={particlesInit} />
+      
+        <Media queries={{
+            small: "(max-width: 480px)",
+            large: "(min-width: 768px)"
+          }}>
+            {matches => (
+              <>
+                {matches.small &&
+                  <div></div> 
+                }
+                {matches.large && 
+                <Particles  options={options} init={particlesInit} />
+                }
+              </>
+            )}
+        </Media>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
       <Footer />
     </>
   );
