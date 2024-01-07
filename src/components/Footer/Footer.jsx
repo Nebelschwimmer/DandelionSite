@@ -12,7 +12,7 @@ export const Footer = () => {
   return (
     <div className='footer'> 
       <span>© Dandelion</span>
-      <span>Разработка - Nebelschwimmer (Андрей Дьяков) ©</span> 
+      <span>Разработка - Nebelschwimmer ©</span> 
     </div>
   )
 }

@@ -5,12 +5,12 @@ const onResponse = (res) => {
 };
 
 export const showUsers = () => {
-  return fetch('https://viable-desk-production.up.railway.app/users', {
+  return fetch('http://localhost:3050/users', {
   }).then((res) => onResponse(res));
 }
 
 export const addNewUSer = (body) => {
-  return fetch('https://viable-desk-production.up.railway.app/users/add', {
+  return fetch('http://localhost:3050/users', {
     headers: {
       "Content-Type": "application/json"
     },
@@ -21,7 +21,7 @@ export const addNewUSer = (body) => {
 }
 
 export const deleteUser = (_id) => {
-  return fetch('https://viable-desk-production.up.railway.app/users/delete', {
+  return fetch('http://localhost:3050/users', {
     headers: {
       "Content-Type": "application/json"
     },
