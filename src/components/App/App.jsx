@@ -15,6 +15,7 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import { Admin } from "../Admin/Admin.jsx";
 import CircularProgress from '@mui/material/CircularProgress';
 import Media from 'react-media';
+import ReactLoading from "react-loading";
 const App = () => {
 
   const scrollRef = useRef(null)
@@ -32,18 +33,9 @@ const App = () => {
 
   const navigate = useNavigate()
 
-  const [loading, setLoading] = useState(true)
-  useEffect(() => {
-      setTimeout(() => setLoading(false), 3000)
-  }, [])
-  if (loading) {
-      return <div className="wait"><CircularProgress color="inherit" /></div>
-  }
-
-
-  
   return (
     <>
+
     
   
     <Header setGlow={setGlow} scrollRef={scrollRef}/>

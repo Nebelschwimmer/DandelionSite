@@ -1,9 +1,20 @@
 import './videoSection.scss'
-import videoLarge from './WebSiteVideo2.mp4'
+
 import Media from 'react-media';
-import videoSmall from './video_mob.mp4'
+
+
+import { LazyLoadComponent } from 'react-lazy-load-image-component';
+import gif from './gif_large.gif'
+import mobileGif from './gif-mobile2.gif'
 
 export const VideoSection = () => {
+
+// useEffect(()=>{
+//   function OnLoadVideo () {
+//     videoLarge.onLoad() 
+//   }
+// }, [])
+
 
 
   return (
@@ -17,10 +28,13 @@ export const VideoSection = () => {
               <>
                 {matches.small && 
                   <div className="section1__video__container">
-              
-                  <video  className="section1__video" autoPlay muted loop>
-                    <source src={videoSmall} type="video/webm"/>
-                  </video>
+                    <img className="section1__video" alt='Загрузка'  src={mobileGif}/>
+                    {/* <video  className="section1__video" autoPlay muted loop>
+                      <source src={videoSmall} type="video/webm"/>
+                    </video> */}
+
+                    <div className="section1__video__container"></div>
+
                 
                     <div>
                     <div className='section1__upper_text__wrapper'>
@@ -37,10 +51,13 @@ export const VideoSection = () => {
                 
                 }
                 {matches.large && 
+                  <LazyLoadComponent>
                   <div className="section1__video__container">
+
     
-                  <video src={videoLarge} className="section1__video" autoPlay muted loop>
-                  </video>
+                  {/* <video src={videoLarge} className="section1__video" autoPlay muted loop>
+                  </video> */}
+                    <img className="section1__video"  alt='Загрузка' src={gif}/>
                     <div>
                       <div className='section1__upper_text__wrapper'>
                         <span className='section1__text__bold'>DANDELION - </span>
@@ -53,6 +70,7 @@ export const VideoSection = () => {
                     <span className='motivation__golden__line'></span>
                     
                   </div>
+                  </LazyLoadComponent>
                 }
               </>
             )}

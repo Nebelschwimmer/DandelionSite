@@ -12,6 +12,7 @@ table {
   word-break: break-all;
   width: 100%;
   background-color: rgb(34, 29, 29);
+  opacity: 0.8;
  
 }
 
@@ -48,6 +49,7 @@ table {
 }
 .sort_users_item{
   cursor: pointer;
+  
   &:hover {
     color: var(--main-text-color);
   }
@@ -96,6 +98,7 @@ th{
   pointer-events:all;
   border-radius: 5px;
   margin-top: 3rem;
+  opacity: 0.8;
 
 }
 
