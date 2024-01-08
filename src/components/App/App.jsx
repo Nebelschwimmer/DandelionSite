@@ -33,6 +33,9 @@ const App = () => {
 
   const navigate = useNavigate()
 
+
+
+  
   return (
     <>
 
@@ -89,24 +92,6 @@ const App = () => {
               </>
             )}
         </Media>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
 
       <Footer />
     </>
