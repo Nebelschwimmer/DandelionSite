@@ -3,7 +3,7 @@ import './admin.scss'
 import { showUsers } from '../../utils/api'
 import { deleteUser } from '../../utils/api'
 import DeleteIcon from '@mui/icons-material/Delete';
-import { Modal } from '../Modal/Modal';
+
 import { useNavigate } from 'react-router-dom';
 
 
@@ -12,9 +12,7 @@ export const Admin = ({users, setUsers}) =>{
   const [searchInput, setSearchInput] = useState("");
   const [filteredResults, setFilteredResults] = useState([]);
   const [noSearch, setNoSearch] = useState("");
-
-
-const navigate = useNavigate()
+  const navigate = useNavigate()
 
 useEffect(()=>{
   showUsers().then((result)=>{
@@ -22,8 +20,6 @@ useEffect(()=>{
   })
 },[setUsers]
 )
-
-
 
 const deleteUserInfo = async (_id) => {
   try {
@@ -35,7 +31,6 @@ const deleteUserInfo = async (_id) => {
     console.log(err)
   }
 }
-
 
 useEffect(() => {
   const filteredData = users.filter((f) => {

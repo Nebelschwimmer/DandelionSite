@@ -2,7 +2,7 @@ import './sectioPics.scss'
 import diamond from './diamond.webp'
 import lion from './lion.webp'
 import twig from './twig.webp'
-import coins from './coins.png'
+import coins from './coins.webp'
 
 export const SectionPics = () => {
   return (

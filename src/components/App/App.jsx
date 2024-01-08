@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import './app.scss'
 import { Header } from '../Header/Header';
 import { SectionPics } from '../SectionPics/SectionPics';
@@ -13,9 +13,7 @@ import { options } from "../../utils/utils.js"
 import { useRef} from 'react'
 import { Route, Routes, useNavigate } from "react-router-dom";
 import { Admin } from "../Admin/Admin.jsx";
-import CircularProgress from '@mui/material/CircularProgress';
 import Media from 'react-media';
-import ReactLoading from "react-loading";
 const App = () => {
 
   const scrollRef = useRef(null)

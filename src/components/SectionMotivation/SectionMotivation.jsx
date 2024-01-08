@@ -1,10 +1,10 @@
 import './sectionMotivation.scss'
-import { forwardRef } from "react";
 
 
-export const SectionMotivation = forwardRef((props, ref) => {
+
+export const SectionMotivation = () => {
   return(
-    <section ref={ref}  className='motivation'>
+    <section   className='motivation'>
       
       <div  className='motivation__text__wrapper'>
           <h1 className='motivation__text__header'>Осмельтесь на большее:</h1>
@@ -21,4 +21,3 @@ export const SectionMotivation = forwardRef((props, ref) => {
         </section>
   )
 }
-)
