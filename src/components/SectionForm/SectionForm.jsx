@@ -4,7 +4,7 @@ import { forwardRef } from "react";
 import cn from 'classnames'
 import { useEffect, useState } from 'react';
 import LinearProgress from '@mui/material/LinearProgress';
-import { useForm, } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { addNewUSer } from '../../utils/api';
 
 
@@ -56,8 +56,6 @@ const emailRegiter = register("email", {
     value: /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/
   }
 });
-
-
 
 
 const sendUserData = async (data) => {

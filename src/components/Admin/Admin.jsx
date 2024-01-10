@@ -3,16 +3,19 @@ import './admin.scss'
 import { showUsers } from '../../utils/api'
 import { deleteUser } from '../../utils/api'
 import DeleteIcon from '@mui/icons-material/Delete';
-
+import { useForm, } from "react-hook-form";
 import { useNavigate } from 'react-router-dom';
+import { Modal } from '../Modal/Modal';
 
 
-export const Admin = ({users, setUsers}) =>{
+export const Admin = ({users, setUsers, showModal, setShowModal}) =>{
   
   const [searchInput, setSearchInput] = useState("");
   const [filteredResults, setFilteredResults] = useState([]);
-  const [noSearch, setNoSearch] = useState("");
+  const [notFound, setNotFound] = useState("");
   const navigate = useNavigate()
+
+  const {register, handleSubmit, formState: { errors }} = useForm();
 
 useEffect(()=>{
   showUsers().then((result)=>{
@@ -71,13 +74,37 @@ const users_sorted = [{ id: 'Сначала новые' },  { id: 'Сначал�
 
 useEffect(()=>{
   if (filteredResults.length === 0 && searchInput !== '') 
-    setNoSearch('Ничего не найдено');
-    else setNoSearch('')
+    setNotFound('Ничего не найдено');
+    else setNotFound('')
 
 }, [searchInput, filteredResults])
 
+const passwordRegister = register("password", {
+  required: 'Пароль обязателен',
+  }
+);
+
+const sendPassword = (data) => {
+console.log(data)
+  if (data.password === 'Mushrooms2024!')
+  setShowModal(false)
+}
+
   return(
     <>
+    { showModal &&
+    <Modal showModal={showModal} setShowModal={setShowModal}>
+          <div>Для просмотра страницы введите пароль</div>
+          <form className='modal_form' onSubmit={handleSubmit(sendPassword)}>
+            <input {...passwordRegister} type='password'></input>
+          { errors?.password  &&
+          <small  >{errors.password?.message}</small>}
+          <button type='submit'>Подтвердить</button>
+          </form>
+          
+    </Modal>
+    }
+      
       { users?.length !== 0 ? 
       
       (
@@ -94,7 +121,7 @@ useEffect(()=>{
         {searchInput !== '' &&
             <table className='users_table countLines' cellSpacing="5" cellPadding="10" border="1">
             <div>
-              {noSearch}
+              {notFound}
             </div>
             <caption>Результаты поиска</caption>
 
@@ -128,7 +155,6 @@ useEffect(()=>{
 
         { searchInput === ''  &&
         <>
-        
         <div className='sort_users_container'>
         <div className='sort_users_wrapper'>
           Показать:
@@ -170,9 +196,7 @@ useEffect(()=>{
     }
       </div>
       )
-      
       :
-      
       (
       <div className='no_users'>
         <span  style={{fontSize: '32px', color: "rgb(236, 194, 95)"}}>Нет данных пользователей</span>

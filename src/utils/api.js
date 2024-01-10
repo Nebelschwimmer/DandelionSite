@@ -12,7 +12,7 @@ export const showUsers = () => {
 export const addNewUSer = (body) => {
   return fetch('http://92.205.56.143:3050/users/add', {
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     },
     method: "POST",
     body: JSON.stringify(body),
@@ -23,8 +23,8 @@ export const addNewUSer = (body) => {
 export const deleteUser = (_id) => {
   return fetch('http://92.205.56.143:3050/users/delete', {
     headers: {
-      "Content-Type": "application/json"
-    },
+      "Content-Type": "application/json",
+        },
     method: "DELETE",
     body: JSON.stringify({_id: _id}),
     

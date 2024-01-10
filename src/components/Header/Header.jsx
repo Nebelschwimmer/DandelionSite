@@ -11,7 +11,7 @@ export const Header = ({scrollRef, setGlow}) => {
   }
 
   const { pathname } = useLocation();
-  if (pathname === "/admin" && '*') {
+  if (pathname === "/ad23min45" && '*') {
     return <></>; }
 
 

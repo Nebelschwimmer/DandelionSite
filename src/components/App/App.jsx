@@ -19,6 +19,7 @@ const App = () => {
   const scrollRef = useRef(null)
   const [glow, setGlow] = useState(false)
   const [users, setUsers] = useState([])
+  const [showModal, setShowModal] = useState(true)
 
 
 
@@ -43,7 +44,7 @@ const App = () => {
     <main className='content'>
 
     <Routes>
-    <Route element={<Admin users={users} setUsers={setUsers}/>} path="/admin"></Route>
+    <Route element={<Admin users={users} setUsers={setUsers} showModal={showModal} setShowModal={setShowModal}/>} path="/ad23min45"></Route>
 
     <Route element={
       <div>

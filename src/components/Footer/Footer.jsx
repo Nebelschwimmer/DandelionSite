@@ -6,13 +6,12 @@ import { useLocation } from "react-router-dom";
 export const Footer = () => {
 
   const { pathname } = useLocation();
-  if (pathname === "/admin" && '*') {
+  if (pathname === "/ad23min45" && '*') {
     return <></>; }
 
   return (
     <div className='footer'> 
       <span>© Dandelion</span>
-      <span>Разработка - Nebelschwimmer ©</span> 
     </div>
   )
 }
