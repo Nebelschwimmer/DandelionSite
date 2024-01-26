@@ -85,8 +85,8 @@ const passwordRegister = register("password", {
 );
 
 const sendPassword = (data) => {
-console.log(data)
-  if (data.password === 'Mushrooms2024!')
+
+  if (data.password === '345M345024!')
   setShowModal(false)
 }
 

@@ -29,7 +29,6 @@ export const VideoSection = () => {
                     </div>
                   </div>
                   <span className='motivation__golden__line'></span>
-                
                   </div>
                 
                 }
